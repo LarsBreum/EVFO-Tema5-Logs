@@ -1,0 +1,5 @@
+<*>1 *-9-26T11:01:00 bridge CROND 1778 * [] (root) CMD (run-parts /etc/cron.hourly)
+<*>1 *-9-26T11:12:43 bridge kernel * * [] br0: port 2(eth0) entering disabled state
+<*>1 *-9-26T11:12:43 bridge kernel * * [] device eth0 left promiscuous mode
+<*>1 *-9-26T11:40:11 bridge groupadd 1936 * [] new group: name=pcap, gid=77 
+<*>1 *-9-26T11:40:11 bridge useradd 1937 * [] new user: name=pcap, uid=77, gid=77, home=/var/arpwatch, shell=/sbin/nologin 
