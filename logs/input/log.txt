@@ -1,0 +1,27 @@
+2002-08-27|18:54:03|dralion1|218.19.20.104|10.1.1.2PROXY:WEB-GET||4859|3128|T||6|tcp,dp=3128,sp=4859|
+
+Sep 26 11:01:00 bridge CROND[1778]: (root) CMD (run-parts /etc/cron.hourly) 
+Jan 26 11:53:06 combo sendmail: sm-client shutdown failed
+
+Jan 26 12:20:03 combo messagebus: messagebus -TERM succeeded
+
+Jan 26 12:20:05 combo atd: atd shutdown succeeded
+
+Jan 26 12:20:06 combo privoxy: privoxy shutdown succeeded
+
+Aug 14 04:03:39 combo cups: cupsd shutdown succeeded
+Aug 14 04:03:44 combo cups: cupsd startup succeeded
+Feb  1 00:00:31 bridge kernel: INBOUND TCP: IN=br0 PHYSIN=eth0 OUT=br0 PHYSOUT=eth1 SRC=211.168.230.94 DST=11.11.11.70 LEN=48 TOS=0x00 PREC=0x00 TTL=110 ID=7204 DF PROTO=TCP SPT=1208 DPT=135 WINDOW=16384 RES=0x00 SYN URGP=0
+
+Mar 14 04:18:36 combo sendmail[10387]: j2E9II6S010386: to=<root@combo.honeypotbox.com>, ctladdr=<root@combo.honeypotbox.com> (0/0), delay=00:00:01, xdelay=00:00:01, mailer=local, pri=69940, dsn=2.0.0, stat=Sent
+
+Mar 14 23:47:46 combo sendmail[12661]: j2F4lk6S012661: [211.158.69.89] did not issue MAIL/EXPN/VRFY/ETRN during connection to MTA
+
+Mar 14 04:18:17 combo sendmail[10384]: j2E9HFPa010384: from=root, size=39406, class=0, nrcpts=1, msgid=<200503140917.j2E9HFPa010384@combo.honeypotbox.com>, relay=root@localhost
+Oct 12 03:54:44 ns1 syslog: syslogd startup succeeded
+
+Oct 12 03:54:44 ns1 syslog: klogd startup succeeded
+
+Oct 12 03:54:44 ns1 portmap: portmap startup succeeded
+
+Oct 12 03:54:44 ns1 nfslock: rpc.statd startup succeeded
