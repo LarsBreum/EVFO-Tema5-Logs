@@ -39,7 +39,7 @@ def transformar_time(date_time):
     mes, dia, hora = date_time.split()
     return f"*-{meses_abreviados.get(mes)}-{dia}T{hora}"
 
-def trasnformar(linea):
+def transformar(linea):
     #procesa la linea para encontrar el formato
     matches = re.match(patron_bastion, linea)
     if matches:
@@ -52,9 +52,23 @@ def trasnformar(linea):
         message = matches.group(5)
         log=f"<*>1 {transformar_time(date_time)} {host} {program} {process_id} * [] {message}"
         return True, log
+    
+    isDragon = linea[:4].isdigit()
+    if isDragon:
+        print(f"{linea} es dragon")
+        matches = re.findall(r"([^|]+)", linea) #outputs a list of groups seperated by the pipe charecter
+        date_time = matches[0] + "T" + matches[1]
+        host = f"{matches[4]}:{matches[6]}"
+        program = matches[3]
+        process_id = "*"
+        message = matches[8]
+        log=f"<*>1 {date_time} {host} {program} {process_id} * [] {message}"
+        print(log)
+        return True, log
+    
     if linea[0]=="<":
        return True, log
-    else: #ningún patron conocido
+    else: #ningún patron conocidodate_time
         return False, linea   
     
 def extraer_fecha_hora(log):
@@ -101,7 +115,7 @@ try:
         for linea in archivo:
             # Process line
             if(linea != ""):
-                conocido, log = trasnformar(linea)
+                conocido, log = transformar(linea)
                 if conocido:
                     logs_salida.append(log)
                 else:
