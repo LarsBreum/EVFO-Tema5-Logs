@@ -58,10 +58,10 @@ def transformar(linea):
         print(f"{linea} es dragon")
         matches = re.findall(r"([^|]+)", linea) #outputs a list of groups seperated by the pipe charecter
         date_time = matches[0] + "T" + matches[1]
-        host = f"{matches[4]}:{matches[6]}"
-        program = matches[3]
+        host = f"{matches[3]}:{matches[5]}"
+        program = matches[4]
         process_id = "*"
-        message = matches[8]
+        message = matches[9]
         log=f"<*>1 {date_time} {host} {program} {process_id} * [] {message}"
         print(log)
         return True, log
