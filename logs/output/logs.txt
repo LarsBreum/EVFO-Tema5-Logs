@@ -1,4 +1,10 @@
+<*>1 2002-08-27T18:49:42 PROXY:WEB-GET:10.1.1.2 218.19.20.104 * * [] 6
+<*>1 2002-08-27T18:49:42 DYNAMIC-TCP:218.19.20.104 10.1.1.2 * * [] ---A----
+<*>1 2002-08-27T18:49:42 PROXY:WEB-GET:10.1.1.2 218.19.20.104 * * [] 6
+<*>1 2002-08-27T18:49:42 DYNAMIC-TCP:218.19.20.104 10.1.1.2 * * [] ---A----
 <*>1 2002-08-27T18:54:03 218.19.20.104:4859 10.1.1.2PROXY:WEB-GET * * [] tcp,dp=3128,sp=4859
+<*>1 2002-08-27T18:54:03 PROXY:WEB-GET:10.1.1.2 218.19.20.104 * * [] 6
+<*>1 2002-08-27T18:54:03 DYNAMIC-TCP:218.19.20.104 10.1.1.2 * * [] ---A----
 <*>1 *-9-26T11:01:00 bridge CROND 1778 * [] (root) CMD (run-parts /etc/cron.hourly)
 <*>1 *-9-26T11:12:43 bridge kernel * * [] br0: port 2(eth0) entering disabled state
 <*>1 *-9-26T11:12:43 bridge kernel * * [] device eth0 left promiscuous mode

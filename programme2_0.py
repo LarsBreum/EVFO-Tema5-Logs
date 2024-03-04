@@ -63,7 +63,6 @@ def transformar(linea):
         process_id = "*"
         message = matches[9]
         log=f"<*>1 {date_time} {host} {program} {process_id} * [] {message}"
-        print(log)
         return True, log
     
     if linea[0]=="<":

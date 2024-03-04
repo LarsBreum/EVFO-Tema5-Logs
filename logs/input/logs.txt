@@ -4,4 +4,10 @@ Sep 26 11:12:43 bridge kernel: device eth0 left promiscuous mode
 Sep 26 11:40:11 bridge groupadd[1936]: new group: name=pcap, gid=77 
 Sep 26 11:40:11 bridge useradd[1937]: new user: name=pcap, uid=77, gid=77, home=/var/arpwatch, shell=/sbin/nologin 
 2002-08-27|18:54:03|dralion1|218.19.20.104|10.1.1.2PROXY:WEB-GET||4859|3128|T||6|tcp,dp=3128,sp=4859|
+2002-08-27|18:54:03|dralion1|PROXY:WEB-GET|218.19.20.104|10.1.1.2|4859|3128|T||6|tcp,dp=3128,sp=4859|
+2002-08-27|18:54:03|dralion1|DYNAMIC-TCP|10.1.1.2|218.19.20.104|3128|4859|F|---A----|6|tcp,sp=3128,dp=4859,flags=---A----|
+2002-08-27|18:49:42|dralion1|PROXY:WEB-GET|218.19.20.104|10.1.1.2|3916|3128|T||6|tcp,dp=3128,sp=3916|
+2002-08-27|18:49:42|dralion1|DYNAMIC-TCP|10.1.1.2|218.19.20.104|3128|3916|F|---A----|6|tcp,sp=3128,dp=3916,flags=---A----|
+2002-08-27|18:49:42|dralion1|PROXY:WEB-GET|218.19.20.104|10.1.1.2|3916|3128|T||6|tcp,dp=3128,sp=3916|
+2002-08-27|18:49:42|dralion1|DYNAMIC-TCP|10.1.1.2|218.19.20.104|3128|3916|F|---A----|6|tcp,sp=3128,dp=3916,flags=---A----|
 ESTE ES UN FORMATO DE PRUEBA INVALIDO
