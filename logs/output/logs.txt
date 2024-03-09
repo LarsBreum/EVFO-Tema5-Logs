@@ -5,8 +5,14 @@
 <*>1 2002-08-27T18:54:03 218.19.20.104:4859 10.1.1.2PROXY:WEB-GET * * [] tcp,dp=3128,sp=4859
 <*>1 2002-08-27T18:54:03 PROXY:WEB-GET:10.1.1.2 218.19.20.104 * * [] 6
 <*>1 2002-08-27T18:54:03 DYNAMIC-TCP:218.19.20.104 10.1.1.2 * * [] ---A----
-<*>1 *-9-26T11:01:00 bridge CROND 1778 * [] (root) CMD (run-parts /etc/cron.hourly)
-<*>1 *-9-26T11:12:43 bridge kernel * * [] br0: port 2(eth0) entering disabled state
-<*>1 *-9-26T11:12:43 bridge kernel * * [] device eth0 left promiscuous mode
-<*>1 *-9-26T11:40:11 bridge groupadd 1936 * [] new group: name=pcap, gid=77 
-<*>1 *-9-26T11:40:11 bridge useradd 1937 * [] new user: name=pcap, uid=77, gid=77, home=/var/arpwatch, shell=/sbin/nologin 
+<*>1 2005-09-18T04:07:24 mailmanctl(10270) mailmanctl(10270) * * [] PID unreadable in: /var/mailman/data/master-qrunner.pid 
+<*>1 2005-09-18T04:07:24 mailmanctl(10270) mailmanctl(10270) * * [] [Errno 2] No such file or directory: '/var/mailman/data/master-qrunner.pid' 
+<*>1 2005-09-18T04:07:24 mailmanctl(10270) mailmanctl(10270) * * [] Is qrunner even running? 
+<*>1 *-02-1T00:00:27 bridge kernel * * [] INBOUND TCP: IN=br0 PHYSIN=eth0 OUT=br0 PHYSOUT=eth1 SRC=192.150.249.87 DST=11.11.11.89 LEN=40 TOS=0x00 PREC=0x00 TTL=110 ID=17292 PROTO=TCP SPT=220 DPT=6129 WINDOW=16384 RES=0x00 SYN URGP=0 
+<*>1 *-03-14T04:18:36 combo sendmail 10387 * [] j2E9II6S010386: to=<root@combo.honeypotbox.com>, ctladdr=<root@combo.honeypotbox.com> (0/0), delay=00:00:01, xdelay=00:00:01, mailer=local, pri=69940, dsn=2.0.0, stat=Sent
+<*>1 *-09-26T11:01:00 bridge CROND 1778 * [] (root) CMD (run-parts /etc/cron.hourly)
+<*>1 *-09-26T11:12:43 bridge kernel * * [] br0: port 2(eth0) entering disabled state
+<*>1 *-09-26T11:12:43 bridge kernel * * [] device eth0 left promiscuous mode
+<*>1 *-09-26T11:40:11 bridge groupadd 1936 * [] new group: name=pcap, gid=77 
+<*>1 *-09-26T11:40:11 bridge useradd 1937 * [] new user: name=pcap, uid=77, gid=77, home=/var/arpwatch, shell=/sbin/nologin 
+<*>1 *-10-12T03:54:44 ns1 syslog * * [] syslogd startup succeeded

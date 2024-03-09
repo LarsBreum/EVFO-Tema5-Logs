@@ -10,4 +10,10 @@ Sep 26 11:40:11 bridge useradd[1937]: new user: name=pcap, uid=77, gid=77, home=
 2002-08-27|18:49:42|dralion1|DYNAMIC-TCP|10.1.1.2|218.19.20.104|3128|3916|F|---A----|6|tcp,sp=3128,dp=3916,flags=---A----|
 2002-08-27|18:49:42|dralion1|PROXY:WEB-GET|218.19.20.104|10.1.1.2|3916|3128|T||6|tcp,dp=3128,sp=3916|
 2002-08-27|18:49:42|dralion1|DYNAMIC-TCP|10.1.1.2|218.19.20.104|3128|3916|F|---A----|6|tcp,sp=3128,dp=3916,flags=---A----|
+Mar 14 04:18:36 combo sendmail[10387]: j2E9II6S010386: to=<root@combo.honeypotbox.com>, ctladdr=<root@combo.honeypotbox.com> (0/0), delay=00:00:01, xdelay=00:00:01, mailer=local, pri=69940, dsn=2.0.0, stat=Sent
 ESTE ES UN FORMATO DE PRUEBA INVALIDO
+Sep 18 04:07:24 2005 mailmanctl(10270): PID unreadable in: /var/mailman/data/master-qrunner.pid 
+Sep 18 04:07:24 2005 mailmanctl(10270): [Errno 2] No such file or directory: '/var/mailman/data/master-qrunner.pid' 
+Sep 18 04:07:24 2005 mailmanctl(10270): Is qrunner even running? 
+Oct 12 03:54:44 ns1 syslog: syslogd startup succeeded
+Feb 1 00:00:27 bridge kernel: INBOUND TCP: IN=br0 PHYSIN=eth0 OUT=br0 PHYSOUT=eth1 SRC=192.150.249.87 DST=11.11.11.89 LEN=40 TOS=0x00 PREC=0x00 TTL=110 ID=17292 PROTO=TCP SPT=220 DPT=6129 WINDOW=16384 RES=0x00 SYN URGP=0 

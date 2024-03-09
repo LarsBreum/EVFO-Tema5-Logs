@@ -6,7 +6,7 @@ from datetime import datetime
 # Structure: <$PRI>$VER $TIMESTAMP $HOSTNAME $APPNAME $PROCID $MSGID $STRUCTURED_DATA
 # PRI: priority
 # VER: version (currently 1)
-# TIMESTAMP: timestamp in the format: YYYY  -MM-DD<T>HH:MM:SS.sssss+ZZ:ZZ
+# TIMESTAMP: timestamp in the format: YYYY-MM-DD<T>HH:MM:SS.sssss+ZZ:ZZ
 # HOSTNAME: Fully qualified domain name (FQND, IP, hostname or nil)
 # APPNAME: Should identify the device or application
 # PROCID: Process ID. is often nil. Not required but often used to identify discontinuities
@@ -33,11 +33,21 @@ logs_salida_ordenados=[]
 
 #patrones
 patron_bastion = r'(\w{3}\s\d{1,2}\s\d{2}:\d{2}:\d{2}) (\w+) (\w+)(?:\[(\d+)\])?: (.*)'
+#patron_mta = r'^(\w{3}\s+\d{1,2}\s\d{2}:\d{2}:\d{2})\s(\w+)\s(\w+)\[(\d+)\]:\s(\w+):.*to=<(.*?)>,\sctladdr=<(.*?)>\s\(\d+/\d+\),\sdelay=([\d:]+),\sxdelay=([\d:]+),\smailer=(\w+),\spri=(\d+),\sdsn=(\d\.\d\.\d),\sstat=(\w+)$'
+patron_mailman = r'([A-Z][a-z]{2} \d{1,2}) (\d{2}:\d{2}:\d{2}) (\d{4}) ([a-zA-Z0-9]+\(\d+\)): (.+)'
 
+# transform date_time for logs that does not include a year
 def transformar_time(date_time):
-    meses_abreviados = {'Ene': "1",'Feb': "2",'Mar': "3",'Abr': "4",'May': "5",'Jun': "6",'Jul': "7", 'Ago': "8",'Sep': "9",'Oct': "10",'Nov': "11",'Dic': "12"}
+    meses_abreviados = {'Ene': "01",'Feb': "02",'Mar': "03",'Abr': "04",'May': "05",'Jun': "06",'Jul': "07", 'Ago': "08",'Sep': "09",'Oct': "10",'Nov': "11",'Dic': "12"}
     mes, dia, hora = date_time.split()
     return f"*-{meses_abreviados.get(mes)}-{dia}T{hora}"
+
+# transdorm date_time for logs that includes the yeay
+def transformar_time_w_year(date_time):
+    meses_abreviados = {'Ene': "01",'Feb': "02",'Mar': "03",'Abr': "04",'May': "05",'Jun': "06",'Jul': "07", 'Ago': "08",'Sep': "09",'Oct': "10",'Nov': "11",'Dic': "12"}
+    mes, dia, hora = date_time.split()
+    return f"{meses_abreviados.get(mes)}-{dia}T{hora}"
+
 
 def transformar(linea):
     #procesa la linea para encontrar el formato
@@ -56,7 +66,7 @@ def transformar(linea):
     isDragon = linea[:4].isdigit()
     if isDragon:
         print(f"{linea} es dragon")
-        matches = re.findall(r"([^|]+)", linea) #outputs a list of groups seperated by the pipe charecter
+        matches = re.findall(r"([^|]+)", linea) # returns a list of groups seperated by the pipe charecter
         date_time = matches[0] + "T" + matches[1]
         host = f"{matches[3]}:{matches[5]}"
         program = matches[4]
@@ -64,6 +74,26 @@ def transformar(linea):
         message = matches[9]
         log=f"<*>1 {date_time} {host} {program} {process_id} * [] {message}"
         return True, log
+    
+    if "mailman" in linea:
+        print(f"{linea} es mailman")
+        mailman = re.match(patron_mailman, linea)
+        year = mailman.group(3)
+        date = transformar_time_w_year(mailman.group(1) + " " + mailman.group(2))
+        date_time = f"{year}-{date}"
+        program = mailman.group(4)
+        host = mailman.group(4)
+        process_id = "*"
+        message = mailman.group(5)
+
+        log=f"<*>1 {date_time} {host} {program} {process_id} * [] {message}"
+        print(log)
+        return True, log
+        
+    
+    # match = re.match(patron_mta, linea)
+    # if match:
+    #     print("es MTA")
     
     if linea[0]=="<":
        return True, log
@@ -123,13 +153,13 @@ except FileNotFoundError:
     print(f"No se pudo encontrar el archivo '{path_entrada}'")
 except Exception as e:
     print(f"Ocurrió un error: {e}")
-print("LOGS SALIDA:")  
-print(logs_salida) 
-print("LOGS desconocdios:")  
-print(logs_desconocidos) 
+# print("LOGS SALIDA:")  
+# print(logs_salida) 
+# print("LOGS desconocdios:")  
+# print(logs_desconocidos) 
 logs_salida_ordenados = ordenar_logs() 
-print("LOGS ordenados:") 
-print(logs_salida_ordenados)  
+#print("LOGS ordenados:") 
+#print(logs_salida_ordenados)  
 escribir_salida()
     
 
