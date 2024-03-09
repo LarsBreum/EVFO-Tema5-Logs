@@ -89,11 +89,6 @@ def transformar(linea):
         log=f"<*>1 {date_time} {host} {program} {process_id} * [] {message}"
         print(log)
         return True, log
-        
-    
-    # match = re.match(patron_mta, linea)
-    # if match:
-    #     print("es MTA")
     
     if linea[0]=="<":
        return True, log
