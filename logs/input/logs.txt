@@ -17,3 +17,4 @@ Sep 18 04:07:24 2005 mailmanctl(10270): [Errno 2] No such file or directory: '/v
 Sep 18 04:07:24 2005 mailmanctl(10270): Is qrunner even running? 
 Oct 12 03:54:44 ns1 syslog: syslogd startup succeeded
 Feb 1 00:00:27 bridge kernel: INBOUND TCP: IN=br0 PHYSIN=eth0 OUT=br0 PHYSOUT=eth1 SRC=192.150.249.87 DST=11.11.11.89 LEN=40 TOS=0x00 PREC=0x00 TTL=110 ID=17292 PROTO=TCP SPT=220 DPT=6129 WINDOW=16384 RES=0x00 SYN URGP=0 
+Mar 14 04:18:36 combo sendmail[10387]: j2E9II6S010386: to=<root@combo.honeypotbox.com>, ctladdr=<root@combo.honeypotbox.com> (0/0), delay=00:00:01, xdelay=00:00:01, mailer=local, pri=69940, dsn=2.0.0, stat=Sent
